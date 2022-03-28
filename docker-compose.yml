@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  jma-mongo:
+    container_name: jma-mongo
+    image: mongo:5.0.5
+    restart: always
+    networks:
+      - jma-network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dev
+      - MONGO_INITDB_ROOT_PASSWORD=dev
+      - MONGO_INITDB_DATABASE=payments
+    ports:
+      - '27017-27019:27017-27019'
+
+networks:
+  jma-network:
+    driver: bridge
+    name: jma-network

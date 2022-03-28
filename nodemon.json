@@ -1,0 +1,10 @@
+{
+  "ext": "ts",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ],
+  "exec": "node --inspect -r ts-node/register src/app",
+  "env": {
+    "NODE_PATH": "."
+  }
+}
